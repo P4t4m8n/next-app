@@ -1,11 +1,12 @@
-import Link from 'next/link';
-import styles from './NavMenu.module.css';
-import Image from 'next/image';
+import Link from "next/link";
+import styles from "./NavMenu.module.css";
+import Image from "next/image";
+import { SignInButton, SignOutButton } from "@/components/buttons";
 
 export default function NavMenu() {
   return (
     <nav className={styles.nav}>
-      <Link href={'/'}>
+      <Link href={"/"}>
         <Image
           src="/next.svg" // Route of the image file
           width={216}
@@ -15,13 +16,16 @@ export default function NavMenu() {
       </Link>
       <ul className={styles.links}>
         <li>
-          <Link href={'/about'}>About</Link>
+          <Link href={"/about"}>About</Link>
         </li>
         <li>
-          <Link href={'/blog'}>Blog</Link>
+          <Link href={"/blog"}>Blog</Link>
         </li>
         <li>
-          <Link href={'/users'}>Users</Link>
+          <Link href={"/users"}>Users</Link>
+        </li>
+        <li>
+          <SignInButton />
         </li>
       </ul>
     </nav>
