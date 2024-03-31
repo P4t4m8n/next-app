@@ -1,10 +1,15 @@
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
+export default async function Home() {
+  const session = await getServerSession();
 
-export default function Home() {
+  if (!session) {
+    redirect("/api/auth/signin");
+  }
   return (
-    <main >
+    <main>
       <h1>Home</h1>
-    
     </main>
   );
 }
